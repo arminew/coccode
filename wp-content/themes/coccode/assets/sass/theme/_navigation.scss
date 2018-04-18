@@ -1,0 +1,61 @@
+.navbar.fixed-top {
+	padding: 1rem;
+	.navbar-brand {
+	    display: inline-block;
+	    padding: 0;
+	    margin-right: 2rem;
+	    font-size: 0;
+	    line-height: 0;
+	    white-space: nowrap;
+	}
+	@media (min-width: 768px) {
+		padding: 2rem 2.4rem;
+	}
+}
+
+/* navigation */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1200;
+    top: 0;
+    right: 0;
+    background-color: $primary;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.4s;
+    a {
+	    padding: 8px 8px 8px 32px;
+	    text-decoration: none;
+	    font-size: 25px;
+	    color: #fff;
+	    display: block;
+	    transition: 0.4s;
+	}
+	.closebtn {
+	    position: absolute;
+	    top: 0;
+	    right: 25px;
+	    font-size: 36px;
+	    margin-left: 50px;
+	}
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+#menuOverlay {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1199;
+	background: rgba(0,0,0,0.5);
+	display: none;
+}

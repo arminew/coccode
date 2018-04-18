@@ -1,0 +1,40 @@
+
+// fonts
+$font-family-base: 'Lato', sans-serif;
+$font-family-serif: 'Bree Serif', serif;
+
+// colors
+$primary:       #FF4713; // orange
+$secondary:     #2B2C35; // "complementary" color for buttons
+
+$light:			#B3B3B3; // light gray
+
+$dark:			$secondary; // text
+$dark-1: 		#222222; // black
+
+/*
+$success:       #5EB384; // green
+$warning:       #FBD68C; // yellow
+$danger:        #F86956; // red	
+*/
+
+
+// new colors for background, border and text
+$theme-colors: (
+	"dark-1":		$dark-1,
+);
+
+
+// font-weight
+$font-weight-light: 	300;
+$font-weight-normal: 	$font-weight-light;
+$font-weight-regular: 	400;
+$font-weight-bold: 		700;
+
+// SIDEBAR
+$navbar-base-height: 48px; // top bar
+$sidenav-base-width: 250px; // sidebar
+$sidenav-collapsed-width: $navbar-base-height; // collapsed sidebar
+
+// spacer for margin and padding: 32px
+$spacer: 2rem;

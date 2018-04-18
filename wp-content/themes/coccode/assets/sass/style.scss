@@ -8,5 +8,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: SASS, clean, bootstrap
 */
 
-body {
-}
+// Custom variables
+@import "theme/_variables.scss";
+
+// Framework and libs
+@import "bootstrap/bootstrap.scss";
+
+// Theme
+@import "theme/_typography.scss";
+@import "theme/_forms.scss";
+@import "theme/_isotope.scss";
+@import "theme/_navigation.scss";
+@import "theme/_layout.scss";

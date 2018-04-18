@@ -1,0 +1,68 @@
+// base typo
+h1, h2, h3 {
+	font-weight: 700;
+}
+
+body, p {
+	color: $dark;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	color: $dark-1;
+}
+
+// text colors with background
+.bg-dark, .bg-primary {
+	p, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, ul {
+		color: #fff;
+	}
+}
+
+.serif {
+	font-family: $font-family-serif;
+	font-weight: $font-weight-normal;
+}
+
+// TITLES
+.title-with-egg {
+	text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    font-size: 1.5rem;
+    padding-top: 10pt;
+    margin-bottom: 0;
+    &:before {
+	    content: "";
+	    background: url(../img/egg-orange-title.svg) top left no-repeat;
+	    width: 9pt;
+	    height: 10pt;
+	    display: block;
+	    text-align: center;
+	    left: 50%;
+	    position: relative;
+	    margin-left: -4pt;
+	    top: -10pt;
+    }
+}
+
+.btn {
+	border-radius: 2rem;
+    padding: 1rem 2.25rem;
+    line-height: 0.875rem;
+    font-size: 0.875rem;
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    i {
+	    margin-right: 1rem;
+	    color: $dark;
+    }
+}
+
+
+.labelled {
+	text-transform: uppercase;
+	border-radius: 1rem;
+	padding: 0.25rem 0.5rem;
+	font-weight: $font-weight-regular;
+}

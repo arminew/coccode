@@ -1,0 +1,47 @@
+.portfolio-page {
+	.grid-item { 
+		width: 100%;
+		@media (min-width: 576px){
+			width: 50%;
+		}
+		@media (min-width: 768px){
+			width: 33.3333333%;
+		}
+		.isotope-post {
+			.post-text {
+				background: $dark;
+				width: 100%;
+				color: $light;
+				padding: 1.25rem;
+				border-bottom-left-radius: 0.3rem; 
+				border-bottom-right-radius: 0.3rem; 
+				h1 {
+					font-size: 0.875rem;
+					line-height: 1rem;
+					text-transform: uppercase;
+					font-weight: $font-weight-light;
+					margin-bottom: 0.125rem;
+				}
+				a {
+					color: #fff;
+				}
+				.categories {
+					text-transform: uppercase;
+					font-size: 0.75rem;
+					line-height: 1rem;
+				}
+			}
+		}
+	}
+	
+	
+	/* filtri */
+	
+	.filter-button-group { margin-bottom: 30px; text-align: center}
+	.filter-button-group button { background: none; border: none; color: #707070; }
+	.filter-button-group button:hover { color: #bfbebe }
+	.filter-button-group button { outline: none}
+	.filter-button-group button.is-checked {color: #9e500e}
+	
+}
+

@@ -1,0 +1,43 @@
+form {
+	label {
+		width: 100%;
+	}
+	input[type="text"], input[type="email"], textarea {
+		background: transparent;
+		border: none;
+		border-bottom: solid 1px #EBEBEB;
+		width: 100%;
+		padding: 0.8rem 0;
+		outline: none;
+		box-shadow: none;
+	}
+	textarea {
+		border: solid 1px #EBEBEB;
+		padding: 0.8rem;
+		margin-top: .5rem;
+		max-height: 8.6rem;
+	}
+	input[type="submit"] {
+		background: $primary;
+		color: #fff;
+	}
+	.wpcf7-acceptance {
+		color: $light;
+		font-size: 0.875rem;
+		.wpcf7-list-item {
+			margin-left: 0!important;
+			margin-bottom: 1rem;
+			input {
+				margin-right: 0.5rem;
+			}
+		}
+	}
+}
+
+#footerForm {
+	h5 {
+		font-weight: $font-weight-light;
+	}
+}
+
+
