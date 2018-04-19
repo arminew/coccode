@@ -6,40 +6,40 @@
  ?>
 
  <?php get_header(); ?>
- 
+
 <?php // ********************************* HOME INTRO *********************************// ?>
 
- 
+
 	<section id="home-section-1" class="d-flex min-h-100 bg-primary align-middle text-light">
-		<div class="container min-h-100 d-flex justify-content-center align-items-center">  
-			
-			
+		<div class="container min-h-100 d-flex justify-content-center align-items-center">
+
+
 			<div class="row justify-content-md-center">
 				<div class="col-md-10">
-					<?php 
+					<?php
 					if ( have_posts() ) {while ( have_posts() ) {the_post(); ?>
-							
-							
+
+
 							<?php the_content(); ?>
-							
-							
+
+
 					<?php } // end while
 					} // end if ?>
 				</div>
 			</div>
-			
+
 			<?php //include('#__TEST__typo-sample.php'); ?>
-			
+
 		</div><!--/ container -->
 	</section><!--/ section 1 -->
-	
 
-<?php // ********************************* PORTFOLIO *********************************// ?>	
+
+<?php // ********************************* PORTFOLIO *********************************// ?>
 	
 	<section id="home-section-2" class="d-flex min-h-100  align-middle text-light">
-		<div class="container-fluid p-0 min-h-100 d-flex justify-content-center align-items-center"> 	
-			
-			
+		<div class="container-fluid p-0 min-h-100 d-flex justify-content-center align-items-center">
+
+
 			<div id="home-carousel" class="owl-carousel">
 				<div class="item" style="background-color: #23262B">
 					<article class="portfolio-post">
@@ -79,8 +79,8 @@
 					</article>
 				</div>
 			</div><!--/ carousel -->
-			
-			
+
+
 			<?php
 			// IMPOSTO LA QUERY PER PORTFOLIO
 /*
@@ -89,10 +89,10 @@
 			    "meta_key" => 'in_home_page',
 			    "meta_value" => true
 			);
-			
+
 			$portfolio = new WP_Query( $queryArgs );
 			?>
-			
+
 			<?php
 			 // ITERO I RISULTATI DI PORTFOLIO
 			if ( $portfolio->have_posts() ) {
@@ -111,21 +111,21 @@
 			?>
 		</div><!--/ container -->
 	</section><!--/ section 2 -->
-	
-	
+
+
 <?php // ********************************* BLOG *********************************// ?>
-	
+
 	<section id="home-section-3" class="pt-4 pb-4 pt-md-5 pb-md-5">
-		<div class="container"> 	
-			
+		<div class="container">
+
 			<div class="row pb-4 pb-md-5">
 				<div class="col text-center">
 					<h3 class="h3 title-with-egg text-center">Blog</h3>
 				</div>
 			</div><!--/ row -->
-			
+
 			<?php // get 3 blog articles ?>
-			
+
 			<div class="row pb-2 pb-md-4">
 				<div class="col-lg-4 mb-3">
 					<article class="blog-post">
@@ -143,7 +143,7 @@
 						</div><!--/ post text -->
 					</article><!--/ blog post -->
 				</div><!--/ col -->
-				
+
 				<div class="col-lg-4 mb-3">
 					<article class="blog-post">
 						<img src="<?php echo get_template_directory_uri(); ?>/immagini-TEST/thumbnailHD-800x533.jpg" class="img-fluid" />
@@ -160,7 +160,7 @@
 						</div><!--/ post text -->
 					</article><!--/ blog post -->
 				</div><!--/ col -->
-				
+
 				<div class="col-lg-4 mb-3">
 					<article class="blog-post">
 						<img src="<?php echo get_template_directory_uri(); ?>/immagini-TEST/thumbnailHD-800x533.jpg" class="img-fluid" />
@@ -178,15 +178,15 @@
 					</article><!--/ blog post -->
 				</div><!--/ col -->
 			</div><!--/ row -->
-			
-			
+
+
 			<div class="row">
 				<div class="col text-center">
 					<button type="button" class="btn btn-primary"><i>A</i> Vedi tutti</button>
 				</div>
 			</div><!--/ row -->
-			
+
 		</div><!--/ container -->
 	</section><!--/ section 2 -->
-	
+
 <?php get_footer(); ?>
