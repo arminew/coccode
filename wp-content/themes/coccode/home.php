@@ -35,80 +35,49 @@
 
 
 <?php // ********************************* PORTFOLIO *********************************// ?>
-	
+
+	<?php
+	// IMPOSTO LA QUERY PER PORTFOLIO
+	$queryArgs = array(
+		"post_type" => 'portfolio',
+		"meta_key" => 'in_home_page',
+		"meta_value" => true
+	);
+
+	$portfolio = new WP_Query( $queryArgs );
+	?>
+
 	<section id="home-section-2" class="d-flex min-h-100  align-middle text-light">
 		<div class="container-fluid p-0 min-h-100 d-flex justify-content-center align-items-center">
-
-
-			<div id="home-carousel" class="owl-carousel">
-				<div class="item" style="background-color: #23262B">
-					<article class="portfolio-post">
-						<div class="portfolio-text">
-							<h1>Titolo</h1>
-							<div class="parola-chiave">
-								UX design<br/>
-								UI design
-							</div>
-							<button type="button" class="btn btn-primary"><i>A</i> Vedi lavoro</button>
-						</div><!--/ portfolio text -->
-						​<picture>
-							<?php // mobile image - METTERE immagine "FULL", gestiscono loro il formato ?>
-							<source srcset="<?php echo get_template_directory_uri(); ?>/immagini-TEST/imgMobile-750x1334-01.jpg" media="(max-width: 767px)">
-							<?php // desktop image - METTERE immagine "FULL", gestiscono loro il formato ?>
-							<source srcset="<?php echo get_template_directory_uri(); ?>/immagini-TEST/imgHD-1920x1080-01.jpg">
-							<?php // default image = desktop ?>
-							<img src="<?php echo get_template_directory_uri(); ?>/immagini-TEST/imgHD-1920x1080-01.jpg" alt="Flowers">
-						</picture>
-					</article>
-				</div>
-				<div class="item" style="background-color: #48A9E1">
-					<article class="portfolio-post">
-						<div class="portfolio-text">
-							<h1>Titolo</h1>
-							<div class="parola-chiave">
-								UX design<br/>
-								UI design
-							</div>
-							<button type="button" class="btn btn-primary"><i>A</i> Vedi lavoro</button>
-						</div><!--/ portfolio text -->
-						<picture>
-							<source srcset="<?php echo get_template_directory_uri(); ?>/immagini-TEST/imgMobile-750x1334-02.jpg" media="(max-width: 767px)">
-							<source srcset="<?php echo get_template_directory_uri(); ?>/immagini-TEST/imgHD-1920x1080-02.jpg">
-							<img src="<?php echo get_template_directory_uri(); ?>/immagini-TEST/imgHD-1920x1080-02.jpg" alt="Flowers">
-						</picture>
-					</article>
-				</div>
-			</div><!--/ carousel -->
-
-
-			<?php
-			// IMPOSTO LA QUERY PER PORTFOLIO
-/*
-			$queryArgs = array(
-			    "post_type" => 'portfolio',
-			    "meta_key" => 'in_home_page',
-			    "meta_value" => true
-			);
-
-			$portfolio = new WP_Query( $queryArgs );
-			?>
-
 			<?php
 			 // ITERO I RISULTATI DI PORTFOLIO
-			if ( $portfolio->have_posts() ) {
-			  echo '<ul>';
-			  while ( $portfolio->have_posts() ) {
-			    $portfolio->the_post();
-			    echo '<li>' . get_the_title() . '<br />';
-			    echo get_the_content() . '</li>';
-			  }
-			  echo '</ul>';
-			} else {
-			  echo 'No portfolio';
-			}
-			wp_reset_postdata();
-*/
-			?>
+			if ( $portfolio->have_posts() ) : ?>
+			  	<div id="home-carousel" class="owl-carousel">
+					<?php while( $portfolio->have_posts() ) : $portfolio->the_post(); $count++ ?>
+                    <div class="item" style="background-color: #23262B">
+    					<article class="portfolio-post">
+    						<div class="portfolio-text">
+    							<h1><? echo get_the_title(); ?></h1>
+    							<div class="parola-chiave">
+    								<? echo get_the_content() ?>
+    							</div>
+    							<button type="button" class="btn btn-primary"><i>A</i><?php _e('Vedi lavoro','theme-text-domain'); ?></button>
+    						</div><!--/ portfolio text -->
+    						​<picture>
+    							<?php // mobile image - METTERE immagine "FULL", gestiscono loro il formato ?>
+    							<source srcset="<?php echo get_template_directory_uri(); ?>/immagini-TEST/imgMobile-750x1334-0<? echo $count ?>.jpg" media="(max-width: 767px)">
+    							<?php // desktop image - METTERE immagine "FULL", gestiscono loro il formato ?>
+    							<source srcset="<?php echo get_template_directory_uri(); ?>/immagini-TEST/imgHD-1920x1080-0<? echo $count ?>.jpg">
+    							<?php // default image = desktop ?>
+    							<img src="<?php echo get_template_directory_uri(); ?>/immagini-TEST/imgHD-1920x1080-0<? echo $count ?>.jpg" alt="Flowers">
+    						</picture>
+    					</article>
+    				</div>
+					<? endwhile; ?>
+				</div>
+			<? endif; ?>
+			<? wp_reset_postdata(); ?>
+
 		</div><!--/ container -->
 	</section><!--/ section 2 -->
 
@@ -182,7 +151,7 @@
 
 			<div class="row">
 				<div class="col text-center">
-					<button type="button" class="btn btn-primary"><i>A</i> Vedi tutti</button>
+					<button type="button" class="btn btn-primary"><i>A</i><?php _e('Vedi tutti','theme-text-domain'); ?></button>
 				</div>
 			</div><!--/ row -->
 

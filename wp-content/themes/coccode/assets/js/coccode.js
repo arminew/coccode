@@ -1,6 +1,6 @@
 $(document).ready(function() {
- 	
- 	
+
+
  	// Carousel HOME PAGE
 	$("#home-carousel").owlCarousel({
 		loop:true,
@@ -21,17 +21,18 @@ $(document).ready(function() {
 			}
 		}
 	});
-	
-	
+
+
 	// Isotope PORTFOLIO
 	var $grid = $('.grid').isotope({
 		itemSelector: '.grid-item',
-		layoutMode: 'fitRows'	
+		layoutMode: 'fitRows'
 	});
-	
+
 	// filter items on button click
 	$('.filter-button-group').on( 'click', 'button', function() {
 	  var filterValue = $(this).attr('data-filter');
+      console.log(filterValue);
 	  $grid.isotope({ filter: filterValue });
 	  //$(this).toggleClass('active');
 	});
@@ -43,7 +44,7 @@ $(document).ready(function() {
 	      $( this ).addClass('is-checked');
 	    });
 	});
- 
+
 });
 
 
